@@ -1,5 +1,6 @@
 import subprocess
 import argparse
+import os
  
  
 parser = argparse.ArgumentParser()
@@ -20,6 +21,7 @@ while True:
         try:
             output = subprocess.check_output(cmd, shell=True).strip('\n')
             print 'commend sent {}'.format(line1)
+            os.system('rm index*')
         except Exception as e:
             print 'failed:  {}'.format(e)
  
